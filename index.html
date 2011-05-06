@@ -71,9 +71,37 @@ div#footer {
 div#footer img {
   width: 72pt;
 }
+
+form div {
+  text-align: center;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+}
+
+input#url {
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+}
+
+input#submit {
+  margin-top: 1em;
+  background: #B2E725;
+  padding: 10pt;
+}
 </style>
 <script src="jquery.min.js"></script>
 <script src="load-screenshot.js"></script>
+<form method="get" style="display: none">
+  <div>
+    Enter the Flickr URL of a hack here: <input type="text" id="url" name="url">
+  </div>
+  <div><input type="submit" id="submit" value="Print That Hack!"></div>
+</form>
 <div id="container" style="display: none">
   <div id="header">
     <img id="hackasaurus_logo" src="hackasaurus_logo.svg">

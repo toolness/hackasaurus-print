@@ -54,8 +54,34 @@ function photoIDtoShortURL(id) {
   return 'http://flic.kr/p/' + base_encode(id);
 };
 
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+  return null;
+}
+
 $(window).ready(function() {
-  var photo_id = '5644398032';
+  var photo_id = getQueryVariable("photo_id");
+  if (!photo_id) {
+    $("form").submit(function() {
+      var re = /http:\/\/www.flickr.com\/photos\/.*\/([0-9]*)\//;
+      var match = $("input#url").val().match(re);
+      if (match) {
+        window.location = window.location.href + "?photo_id=" + match[1];
+      } else {
+        alert("I don't recognize that as a valid Flickr URL.");
+      }
+      return false;
+    });
+    $("form").fadeIn();
+    return;
+  }
   var url = "http://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=e59b6a956fe1cdf4dad125cb3c1c1321&photo_id=" + photo_id + "&format=json&nojsoncallback=1";
   jQuery.getJSON(url, function(obj) {
     var photo = obj.photo;
