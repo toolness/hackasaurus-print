@@ -70,7 +70,7 @@ $(window).ready(function() {
   var photo_id = getQueryVariable("photo_id");
   if (!photo_id) {
     $("form").submit(function() {
-      var re = /http:\/\/www.flickr.com\/photos\/.*\/([0-9]*)/;
+      var re = /http:\/\/www.flickr.com\/photos\/.*\/([0-9]+)/;
       var match = $("input#url").val().match(re);
       if (match) {
         window.location = window.location.href + "?photo_id=" + match[1];
