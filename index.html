@@ -93,6 +93,16 @@ input#submit {
   background: #B2E725;
   padding: 10pt;
 }
+
+div#instructions {
+  border-top: 1px dotted black;
+  margin-top: 1em;
+  text-align: left;
+}
+
+div#instructions li {
+  padding: 0.5em;
+}
 </style>
 <script src="jquery.min.js"></script>
 <script src="load-screenshot.js"></script>
@@ -101,6 +111,14 @@ input#submit {
     Enter the Flickr URL of a hack here: <input type="text" id="url" name="url">
   </div>
   <div><input type="submit" id="submit" value="Print That Hack!"></div>
+  <div id="instructions">
+    <h1>Tips</h1>
+    <ul>
+      <li>It's possible to remove Firefox's default headers and footers from the page layout; see the Firefox Support article entitled <a href="http://support.mozilla.com/en-US/kb/Printing%20a%20web%20page#Print_window_settings">Printing A Web Page</a> for instructions.</li>
+      <li>The page design was created with the <a href="http://www.flickr.com/photos/hackasaurus/5644398032">Failbook</a> hack as a test case, so try to make your hack have a similar aspect ratio, or else some information might not fit on the first printed page.</li>
+      <li>If there's anything on the printed page that you want to change, such as the title, description, or dimensions of the screenshot, you can use the <a href="https://secure.toolness.com/webxray/">Hacker Goggles</a> to do so. Any changes you make with them will show up in the printed version.</li>
+    </ul>
+  </div>
 </form>
 <div id="container" style="display: none">
   <div id="header">
