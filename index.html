@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Printed Hack Example</title>
+<style>
+html, body {
+  background: #FFC328;
+  font-family: Baskerville, Georgia, serif;
+  font-size: 18pt;
+  width: 8in;
+  margin: 10pt auto;
+  padding: 0;
+}
+
+h1 {
+  font-weight: inherit;
+  font-size: 36pt;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+
+div#header {
+  text-align: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  font-style: italic;
+}
+
+a[href="http://hackasaurus.org"] {
+  font-style: normal;
+}
+
+div#header img#hackasaurus_logo {
+}
+
+img#dino {
+  width: 50%;
+  float: right;
+}
+
+div#screenshot-holder {
+  text-align: center;
+}
+
+img#screenshot {
+  width: 100%;
+}
+
+div#footer {
+  clear: both;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 1px dotted black;
+  border-bottom: 1px dotted black;  
+  text-align: right;
+}
+
+div#footer img {
+  width: 72pt;
+}
+</style>
+<script src="jquery.min.js"></script>
+<script src="load-screenshot.js"></script>
+<div id="container" style="display: none">
+  <div id="header">
+    <img id="hackasaurus_logo" src="hackasaurus_logo.svg">
+    <h1 class="title"></h1>
+  </div>
+  <div id="body">
+    <div id="screenshot-holder"><a id="flickr_link" href=""><img id="screenshot" src=""></a></div>
+    <img id="dino" src="dino.svg">
+    <p class="description"></p>
+    <p>To learn about more ways to hack and craft on the Web, visit <em>hackasaurus.org</em>.</p>
+  </div>
+  <div id="footer"><img src="mozilla_logo.svg"></div>
+</div>
