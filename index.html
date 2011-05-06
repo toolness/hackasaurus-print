@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Printed Hack Example</title>
+<title>Printable Hack</title>
 <style>
 html, body {
   background: #FFC328;
@@ -28,8 +28,19 @@ a {
   font-style: italic;
 }
 
-a[href="http://hackasaurus.org"] {
+a:hover {
+  text-decoration: underline;
+}
+
+.description a[href="http://hackasaurus.org"] {
   font-style: normal;
+}
+
+a#shorturl {
+  font-size: 12pt;
+  position: relative;
+  top: -1.5em;
+  font-style: inherit;
 }
 
 div#header img#hackasaurus_logo {
@@ -67,12 +78,13 @@ div#footer img {
   <div id="header">
     <img id="hackasaurus_logo" src="hackasaurus_logo.svg">
     <h1 class="title"></h1>
+    <a id="shorturl" href=""></a>
   </div>
   <div id="body">
     <div id="screenshot-holder"><a id="flickr_link" href=""><img id="screenshot" src=""></a></div>
     <img id="dino" src="dino.svg">
     <p class="description"></p>
-    <p>To learn about more ways to hack and craft on the Web, visit <em>hackasaurus.org</em>.</p>
+    <p>To learn about more ways to hack and craft on the Web, visit <a href="http://hackasaurus.org">hackasaurus.org</a>.</p>
   </div>
   <div id="footer"><img src="mozilla_logo.svg"></div>
 </div>
