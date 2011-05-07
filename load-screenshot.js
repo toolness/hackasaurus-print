@@ -66,6 +66,23 @@ function getQueryVariable(variable) {
   return null;
 }
 
+function scaleScreenshotToFitOnPage(img) {
+  // This page was designed to print the "Failbook" hack,
+  // whose dimensions are 1024x579.
+  
+  var idealAspect = 1024 / 579;
+  var height = img.height();
+  var width = img.width();
+  var aspect = width / height;
+  if (aspect < idealAspect) {
+    // Here we're solving for 'scale' in the following equation:
+    // width / (height * scale) = idealAspect
+
+    var scale = Math.floor((width / (idealAspect * height)) * 100);
+    img.css({width: scale + "%"});
+  }
+}
+
 $(window).ready(function() {
   var photo_id = getQueryVariable("photo_id");
   if (!photo_id) {
@@ -98,6 +115,7 @@ $(window).ready(function() {
     $("a#shorturl").attr("href", shortURL).text(shortURL.slice(7));
     $("img#screenshot").attr("src", photoURL).load(function() {
       $("#container").fadeIn();
+      scaleScreenshotToFitOnPage($(this));
     });
   });
 });
