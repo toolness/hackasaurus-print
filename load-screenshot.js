@@ -112,6 +112,7 @@ $(window).ready(function() {
     var desc = photo.description._content.replace(/\n/g, '<br>');
     var flickrURL = photo.urls.url[0]._content;
     var shortURL = photoIDtoShortURL(photo_id);
+    document.title = title;
     $("div#header h1.title").text(title);
     $("div#body .description").html(desc);
     $("a#flickr_link").attr("href", flickrURL);
