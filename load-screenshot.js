@@ -99,7 +99,10 @@ $(window).ready(function() {
     $("form").fadeIn();
     return;
   }
-  var url = "http://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=e59b6a956fe1cdf4dad125cb3c1c1321&photo_id=" + photo_id + "&format=json&nojsoncallback=1";
+  var url = "http://api.flickr.com/services/rest/?" +
+            "method=flickr.photos.getInfo&" +
+            "api_key=e59b6a956fe1cdf4dad125cb3c1c1321&" +
+            "photo_id=" + photo_id + "&format=json&nojsoncallback=1";
   jQuery.getJSON(url, function(obj) {
     var photo = obj.photo;
     var photoURL = "http://farm" + photo.farm + ".static.flickr.com/" +
